@@ -1,5 +1,6 @@
 package cr.anticow;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import cr.anticow.listeners.GeneralListeners;
@@ -14,7 +15,14 @@ public class AntiCow extends JavaPlugin {
 	public void onEnable(){
 		instance = this;
 		
+		if(Bukkit.getPluginManager().getPlugin("ProtocolLib") == null){
+			Util.log("§cAntiCow eklentisi devre dýþý býrakýldý! ProtocolLib yüklü deðil.");
+			return;
+		}
+		
 		registerListeners();		
+		
+		Util.log(" ");
 		Util.log("§eAntiCow eklentisi aktif! ["+getVersion()+"]");		
 
 		Util.log("§a------------------------------------------");
@@ -23,13 +31,17 @@ public class AntiCow extends JavaPlugin {
 		Util.log(" ");
 		Util.log("§eDiscord iletiþim adresimiz: CRAFTRISE#0083");
 		Util.log("§a------------------------------------------");		
+		Util.log(" ");
 		
 		PacketEnabler.enable();
 	}
 	
 	@Override
 	public void onDisable(){
+		Util.log(" ");
 		Util.log("§cAntiCow eklentisi devredýþý! ["+getVersion()+"]");
+		Util.log(" ");
+		
 		PacketEnabler.disable();
 	}
 	

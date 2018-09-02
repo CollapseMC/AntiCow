@@ -2,3 +2,4 @@ name: AntiCow
 author: CRAFTRISE
 version: 1
 main: cr.anticow.AntiCow
+depend: [ProtocolLib]

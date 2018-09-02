@@ -3,7 +3,6 @@ package cr.anticow;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import cr.anticow.listeners.GeneralListeners;
 import cr.utils.PacketEnabler;
 import cr.utils.Util;
 
@@ -19,8 +18,6 @@ public class AntiCow extends JavaPlugin {
 			Util.log("§cAntiCow eklentisi devre dýþý býrakýldý! ProtocolLib yüklü deðil.");
 			return;
 		}
-		
-		registerListeners();		
 		
 		Util.log(" ");
 		Util.log("§eAntiCow eklentisi aktif! ["+getVersion()+"]");		
@@ -43,10 +40,6 @@ public class AntiCow extends JavaPlugin {
 		Util.log(" ");
 		
 		PacketEnabler.disable();
-	}
-	
-	private void registerListeners(){
-		this.getServer().getPluginManager().registerEvents(new GeneralListeners(), this);
 	}
 	
 	public static AntiCow getPlugin(){

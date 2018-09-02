@@ -22,7 +22,7 @@ import net.minecraft.server.v1_8_R3.NBTTagList;
 public class PacketPlayInBlockPlace extends PacketAdapter {
 	
 	private static int MAX_PACKET_SEND_LIMIT = 8;
-    private static final Map<Player, AtomicInteger> PACKET_SENDED = new ConcurrentHashMap<>();
+	private static final Map<Player, AtomicInteger> PACKET_SENDED = new ConcurrentHashMap<>();
 	
 	public PacketPlayInBlockPlace(){
 		super(

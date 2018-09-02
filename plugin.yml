@@ -1,5 +1,5 @@
 name: AntiCow
 author: CRAFTRISE
-version: 2
+version: 3
 main: cr.anticow.AntiCow
 depend: [ProtocolLib]

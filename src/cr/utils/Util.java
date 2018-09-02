@@ -8,4 +8,8 @@ public class Util {
 		AntiCow.getPlugin().getServer().getConsoleSender().sendMessage(text.toString());
 	}
 	
+	public static boolean isElapsed(long time, double second){
+		return (System.currentTimeMillis() - time >= second * 1000);
+	}
+	
 }

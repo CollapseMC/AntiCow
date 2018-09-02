@@ -18,6 +18,7 @@ public class Util {
 	
 	public static void kickPlayer(Player p, String cause){
 		Bukkit.getScheduler().scheduleSyncDelayedTask(AntiCow.getPlugin(), () -> {
+			if(p == null) return;
 			p.kickPlayer(cause == null ? "" : cause);
 		});
 	}
